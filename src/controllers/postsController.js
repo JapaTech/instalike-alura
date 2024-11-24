@@ -23,7 +23,7 @@ export async function postarNovoPost(req, res) {
 export async function  uploadImagem(req, res) {
     const novoPost = {
         descricao: "",
-        imageUrl: req.file.originalname,
+        imgUrl: req.file.originalname,
         alt: ""
     };
 
@@ -47,7 +47,7 @@ export async function atualizarPost(req, res) {
         const descricao = await gerarDescricaoComGemini(imageBuffer);
         
         const postAtualizado = {
-            imageUrl: urlImagem,
+            imgUrl: urlImagem,
             descricao: descricao,
             alt: req.body.alt,
         };
